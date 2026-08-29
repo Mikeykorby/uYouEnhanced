@@ -7,6 +7,13 @@
 
 #import "uYouPlus.h"
 
+// Local interface declaration (mirrors YouLoop/Tweak.x) so the compiler
+// sees the full class instead of a forward declaration.
+@interface YTAutoplayAutonavController : NSObject
+- (NSInteger)loopMode;
+- (void)setLoopMode:(NSInteger)loopMode;
+@end
+
 static BOOL autoLoopEnabled() {
     return IS_ENABLED(kAutoLoop);
 }
@@ -14,11 +21,12 @@ static BOOL autoLoopEnabled() {
 %group gAutoLoop
 
 %hook YTAutoplayAutonavController
+
 // New controllers (each video gets a fresh one) start in loop mode
 - (id)init {
     self = %orig;
     if (self && autoLoopEnabled()) {
-        [self performSelector:@selector(setLoopMode:) withObject:(id)2 afterDelay:0.1];
+        [self setLoopMode:2];
     }
     return self;
 }
@@ -26,7 +34,7 @@ static BOOL autoLoopEnabled() {
 - (id)initWithParentResponder:(id)arg1 {
     self = %orig;
     if (self && autoLoopEnabled()) {
-        [self performSelector:@selector(setLoopMode:) withObject:(id)2 afterDelay:0.1];
+        [self setLoopMode:2];
     }
     return self;
 }
@@ -40,6 +48,7 @@ static BOOL autoLoopEnabled() {
     }
     %orig;
 }
+
 %end
 
 %end // gAutoLoop

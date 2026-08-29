@@ -45,6 +45,17 @@ static UIView *findSkipButton(UIView *root) {
 
 %group gAdAutoSkip
 
+// Press the skip control: cast to UIControl first so the compiler sees the
+// sendActionsForControlEvents: selector (plain UIView does not declare it).
+static void pressSkip(UIView *skipButton) {
+    if (!skipButton) return;
+    UIView *ctrl = skipButton;
+    while (ctrl && ![ctrl isKindOfClass:UIControl.class]) ctrl = ctrl.superview;
+    if (ctrl) {
+        [(UIControl *)ctrl sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
 // Buttons on the ad overlay live in _ASDisplayView / UIButton hierarchies
 // that are attached to the player overlay; didMoveToWindow fires when the
 // skip button is added on screen.
@@ -60,15 +71,16 @@ static UIView *findSkipButton(UIView *root) {
         dispatch_get_main_queue(), ^{
             // Re-check the button is still on screen and press it
             if (skipButton.window && !skipButton.hidden && skipButton.alpha > 0.01) {
-                [skipButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-                // Fallback for non-control views: walk up to a control
-                UIView *ctrl = skipButton;
-                while (ctrl && ![ctrl isKindOfClass:UIControl.class]) ctrl = ctrl.superview;
-                if (ctrl) [(UIControl *)ctrl sendActionsForControlEvents:UIControlEventTouchUpInside];
+                pressSkip(skipButton);
             }
         });
 }
 %end
+
+// Local interface declaration so the compiler sees the view property
+// instead of a forward-declared class.
+@interface YTAdOverlayViewController : UIViewController
+@end
 
 %hook YTAdOverlayViewController
 - (void)viewDidLoad {
@@ -79,9 +91,7 @@ static UIView *findSkipButton(UIView *root) {
         dispatch_get_main_queue(), ^{
             UIView *skip = findSkipButton(self.view);
             if (skip) {
-                UIView *ctrl = skip;
-                while (ctrl && ![ctrl isKindOfClass:UIControl.class]) ctrl = ctrl.superview;
-                if (ctrl) [(UIControl *)ctrl sendActionsForControlEvents:UIControlEventTouchUpInside];
+                pressSkip(skip);
             }
         });
 }
