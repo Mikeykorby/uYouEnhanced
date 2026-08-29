@@ -146,9 +146,16 @@ static BOOL customShortsActionsEnabled() {
     if (gesture.state != UIGestureRecognizerStateBegan) return;
     NSString *shortsId = nil;
     @try {
-        shortsId = [self valueForKeyPath:@"currentVideo.videoId"];
-    } @catch (NSException *e) {}
-    if (!shortsId) return;
+        // Verified: YTReelPlayerViewController (YTShortsPlayerViewController's
+        // parent) declares - (NSString *)videoId directly.
+        if ([self respondsToSelector:@selector(videoId)]) {
+            shortsId = [self performSelector:@selector(videoId)];
+        }
+    } @catch (NSException *e) {
+        // never crash the Shorts player over a copy action
+        return;
+    }
+    if (![shortsId isKindOfClass:NSString.class] || shortsId.length == 0) return;
 
     UIAlertController *menu = [UIAlertController alertControllerWithTitle:@"Shorts Actions"
         message:nil preferredStyle:UIAlertControllerStyleActionSheet];
