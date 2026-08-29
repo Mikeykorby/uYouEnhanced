@@ -311,3 +311,7 @@
 "REMEMBER_SPEED_DESC" = "Keeps your chosen playback speed across videos and app restarts. No restart needed.";
 "AUTO_LOOP" = "Auto Loop Video";
 "AUTO_LOOP_DESC" = "Replays the current video instead of autoplaying the next one. No restart needed.";
+
+/* uYouEnhanced Extras - iOS 26 */
+"IOS26_LIQUID_UI" = "iOS 26 Liquid UI";
+"IOS26_LIQUID_UI_DESC" = "Applies iOS 26 Liquid Glass-style transparency to YouTube's buttons and bars, integrating them into the UI like native iOS 26 controls. Only affects iOS 26 and newer; no restart needed.";

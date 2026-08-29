@@ -330,6 +330,8 @@ And a huge thank you to **qnblackcat**, **PoomSmart**, and all the other develop
 
 23. **Auto Loop Video:** Replays the current video instead of autoplaying the next one. No restart needed. **<-- uYouEnhanced Exclusive Feature (subject to change)**
 
+24. **iOS 26 Liquid UI:** Applies iOS 26 Liquid Glass-style transparency to YouTube's buttons and bars, integrating them into the UI like native iOS 26 controls. Only affects iOS 26 and newer. No restart needed. **<-- uYouEnhanced Exclusive Feature (subject to change)**
+
 </details>
 
 # Known issues

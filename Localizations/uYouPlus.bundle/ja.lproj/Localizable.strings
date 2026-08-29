@@ -330,3 +330,7 @@
 "REMEMBER_SPEED_DESC" = "選択した再生速度を動画やアプリ再起動をまたいで維持します。再起動は不要です。";
 "AUTO_LOOP" = "動画を自動ループ再生";
 "AUTO_LOOP_DESC" = "次の動画を自動再生する代わりに、現在の動画を繰り返し再生します。再起動は不要です。";
+
+/* uYouEnhanced Extras - iOS 26 */
+"IOS26_LIQUID_UI" = "iOS 26 Liquid UI";
+"IOS26_LIQUID_UI_DESC" = "Applies iOS 26 Liquid Glass-style transparency to YouTube's buttons and bars, integrating them into the UI like native iOS 26 controls. Only affects iOS 26 and newer; no restart needed.";

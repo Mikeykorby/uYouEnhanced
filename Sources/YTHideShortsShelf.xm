@@ -2,12 +2,11 @@
 // Hide Shorts shelf: remove the Shorts carousel from Home / Search / Feed
 // results by filtering the shelf element before it is rendered.
 //
-// Strategy: hook YTIShelfRenderer-based element rendering. YouTube wraps
-// each feed row in an element whose description (when the element is an
-// ELMNodeController-backed cell) contains "shorts_shelf" or the shelf's
-// identifier. When detected, we return an empty element so the layout
-// engine skips the row entirely (same technique as the legacy
-// "hideShortsCells" hook, but targeting the shelf instead of cells).
+// Strategy (mirrors AdBlocking.xm's proven filteredArray approach):
+// YTInnerTubeCollectionViewController._sectionRenderers contains
+// YTIShelfRenderer-wrapped sections; a shelf whose horizontal list items
+// are all Shorts cells (or whose description contains the shelf id) is
+// dropped before display.
 
 #import "uYouPlus.h"
 
@@ -17,37 +16,41 @@ static BOOL hideShortsShelfEnabled() {
 
 %group gHideShortsShelf
 
-// YTElementRenderer is the generic wrapper YouTube uses to deliver
-// feed rows; the shelf arrives as a YTIAbstractRendererPayload whose
-// description contains the shelf identifier.
-%hook YTIElementRenderer
-- (NSData *)elementData {
-    NSData *data = %orig;
-    if (!hideShortsShelfEnabled()) return data;
-    if (!data || data.length < 8) return data;
-
-    @try {
-        NSString *desc = [self description];
-        if (!desc) return data;
-        // Only match the shelf itself, not individual Shorts cells
-        // (those are handled by uYou's own "hideShortsCells" option).
-        if ([desc containsString:@"shorts_shelf"]
-            || [desc containsString:@"shortsShelfRenderer"]
-            || [desc containsString:@"reel_shelf"]) {
-            return [NSData data];
+static BOOL isShortsShelfSection(YTIItemSectionRenderer *sectionRenderer) {
+    if ([sectionRenderer isKindOfClass:%c(YTIShelfRenderer)]) {
+        YTIShelfSupportedRenderers *content = ((YTIShelfRenderer *)sectionRenderer).content;
+        YTIHorizontalListRenderer *horizontalListRenderer = content.horizontalListRenderer;
+        if (horizontalListRenderer.itemsArray.count == 0) return NO;
+        // A Shorts shelf's items all carry the shorts shelf identifier
+        for (YTIHorizontalListSupportedRenderers *supported in horizontalListRenderer.itemsArray) {
+            NSString *desc = [supported.elementRenderer description];
+            if (![desc containsString:@"shorts_shelf"]
+                && ![desc containsString:@"shortsShelfRenderer"]
+                && ![desc containsString:@"reel_shelf"]) {
+                return NO;
+            }
         }
-    } @catch (NSException *e) {
-        // never break the feed on a parsing hiccup
+        return YES;
     }
-    return data;
+    NSString *desc = [sectionRenderer description];
+    return [desc containsString:@"shorts_shelf"]
+        || [desc containsString:@"shortsShelfRenderer"];
 }
-%end
 
-// Some builds deliver the shelf through the browse response pipeline;
-// filter there too so the shelf never reaches the layout stage.
-%hook YTIBrowseEndpoint
-- (id)browseId {
-    return %orig;
+static NSMutableArray <YTIItemSectionRenderer *> *filteredShelfArray(NSArray <YTIItemSectionRenderer *> *array) {
+    NSMutableArray <YTIItemSectionRenderer *> *newArray = [array mutableCopy];
+    NSIndexSet *removeIndexes = [newArray indexesOfObjectsPassingTest:^BOOL(YTIItemSectionRenderer *sectionRenderer, NSUInteger idx, BOOL *stop) {
+        return isShortsShelfSection(sectionRenderer);
+    }];
+    [newArray removeObjectsAtIndexes:removeIndexes];
+    return newArray;
+}
+
+%hook YTInnerTubeCollectionViewController
+- (void)displaySectionsWithReloadingSectionControllerByRenderer:(id)renderer {
+    NSMutableArray *sectionRenderers = [self valueForKey:@"_sectionRenderers"];
+    [self setValue:filteredShelfArray(sectionRenderers) forKey:@"_sectionRenderers"];
+    %orig;
 }
 %end
 

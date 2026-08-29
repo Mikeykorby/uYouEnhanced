@@ -312,3 +312,7 @@
 "REMEMBER_SPEED_DESC" = "Conserve la vitesse de lecture choisie entre les vidéos et les redémarrages. Pas de redémarrage requis.";
 "AUTO_LOOP" = "Lecture en boucle automatique";
 "AUTO_LOOP_DESC" = "Rejoue la vidéo en cours au lieu de lancer la suivante. Pas de redémarrage requis.";
+
+/* uYouEnhanced Extras - iOS 26 */
+"IOS26_LIQUID_UI" = "iOS 26 Liquid UI";
+"IOS26_LIQUID_UI_DESC" = "Applies iOS 26 Liquid Glass-style transparency to YouTube's buttons and bars, integrating them into the UI like native iOS 26 controls. Only affects iOS 26 and newer; no restart needed.";

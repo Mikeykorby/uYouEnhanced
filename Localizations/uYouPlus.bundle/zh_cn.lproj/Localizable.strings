@@ -317,3 +317,7 @@
 "REMEMBER_SPEED_DESC" = "在切换视频和重启应用后保持你选择的播放速度。无需重启。";
 "AUTO_LOOP" = "自动循环播放";
 "AUTO_LOOP_DESC" = "循环播放当前视频，而不是自动播放下一个。无需重启。";
+
+/* uYouEnhanced Extras - iOS 26 */
+"IOS26_LIQUID_UI" = "iOS 26 Liquid UI";
+"IOS26_LIQUID_UI_DESC" = "Applies iOS 26 Liquid Glass-style transparency to YouTube's buttons and bars, integrating them into the UI like native iOS 26 controls. Only affects iOS 26 and newer; no restart needed.";

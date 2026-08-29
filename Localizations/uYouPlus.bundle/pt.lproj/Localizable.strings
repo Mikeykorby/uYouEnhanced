@@ -312,3 +312,7 @@
 "REMEMBER_SPEED_DESC" = "Mantém a velocidade de reprodução escolhida entre vídeos e reinícios. Não requer reinício.";
 "AUTO_LOOP" = "Repetir vídeo automaticamente";
 "AUTO_LOOP_DESC" = "Reproduz o vídeo atual em vez de avançar para o próximo. Não requer reinício.";
+
+/* uYouEnhanced Extras - iOS 26 */
+"IOS26_LIQUID_UI" = "iOS 26 Liquid UI";
+"IOS26_LIQUID_UI_DESC" = "Applies iOS 26 Liquid Glass-style transparency to YouTube's buttons and bars, integrating them into the UI like native iOS 26 controls. Only affects iOS 26 and newer; no restart needed.";
