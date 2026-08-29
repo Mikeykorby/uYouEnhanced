@@ -16,7 +16,9 @@ static BOOL liquidUIEnabled() {
 }
 
 static BOOL liquidUIActive() {
-    return liquidUIEnabled() && @available(iOS 26.0, *);
+    if (!liquidUIEnabled()) return NO;
+    if (@available(iOS 26.0, *)) return YES;
+    return NO;
 }
 
 %group gIOS26LiquidUI
