@@ -319,3 +319,14 @@
 "DEFAULT" = "デフォルト";
 "CUSTOM_COLOR" = "カスタムカラー";
 "RESTART_REQUIRED" = "アプリの再起動が必要です。";
+
+/* uYouEnhanced Extras */
+"UYOU_EXTRAS" = "uYouEnhanced 拡張機能";
+"AD_AUTO_SKIP" = "広告を自動スキップ";
+"AD_AUTO_SKIP_DESC" = "スキップ可能な広告が表示されたら、自動でスキップボタンを押します。再起動は不要です。";
+"HIDE_SHORTS_SHELF" = "ショートズシェルを非表示";
+"HIDE_SHORTS_SHELF_DESC" = "ホームフィードからショートズのカルーセルを削除します。アプリの再起動が必要です。";
+"REMEMBER_SPEED" = "再生速度を記憶";
+"REMEMBER_SPEED_DESC" = "選択した再生速度を動画やアプリ再起動をまたいで維持します。再起動は不要です。";
+"AUTO_LOOP" = "動画を自動ループ再生";
+"AUTO_LOOP_DESC" = "次の動画を自動再生する代わりに、現在の動画を繰り返し再生します。再起動は不要です。";

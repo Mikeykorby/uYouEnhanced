@@ -322,6 +322,14 @@ And a huge thank you to **qnblackcat**, **PoomSmart**, and all the other develop
 
 19. **LowContrastMode:** LowContrastMode is a tweak that allows users to darken the text in the YouTube app, making it easier to read. **<-- uYouEnhanced Exclusive Feature (subject to change)**
 
+20. **Auto Skip Ads:** Automatically presses the Skip button as soon as a skippable ad appears, so you never have to tap it yourself. No restart needed. **<-- uYouEnhanced Exclusive Feature (subject to change)**
+
+21. **Hide Shorts Shelf:** Removes the Shorts carousel from the Home feed. App restart is required. **<-- uYouEnhanced Exclusive Feature (subject to change)**
+
+22. **Remember Playback Speed:** Keeps your chosen playback speed across videos and app restarts, instead of resetting to 1.0x on every new video. No restart needed. **<-- uYouEnhanced Exclusive Feature (subject to change)**
+
+23. **Auto Loop Video:** Replays the current video instead of autoplaying the next one. No restart needed. **<-- uYouEnhanced Exclusive Feature (subject to change)**
+
 </details>
 
 # Known issues

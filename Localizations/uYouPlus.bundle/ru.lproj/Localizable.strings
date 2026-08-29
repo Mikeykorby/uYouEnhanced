@@ -301,3 +301,14 @@
 "DEFAULT" = "Default";
 "CUSTOM_COLOR" = "Custom Color";
 "RESTART_REQUIRED" = "App restart is required.";
+
+/* uYouEnhanced Extras */
+"UYOU_EXTRAS" = "Дополнения uYouEnhanced";
+"AD_AUTO_SKIP" = "Автопропуск рекламы";
+"AD_AUTO_SKIP_DESC" = "Автоматически нажимает кнопку «Пропустить», как только появляется пропускаемая реклама. Перезапуск не нужен.";
+"HIDE_SHORTS_SHELF" = "Скрыть полку Shorts";
+"HIDE_SHORTS_SHELF_DESC" = "Удаляет карусель Shorts из главной ленты. Требуется перезапуск приложения.";
+"REMEMBER_SPEED" = "Запоминать скорость воспроизведения";
+"REMEMBER_SPEED_DESC" = "Сохраняет выбранную скорость воспроизведения между видео и перезапусками. Перезапуск не нужен.";
+"AUTO_LOOP" = "Автоповтор видео";
+"AUTO_LOOP_DESC" = "Повторяет текущее видео вместо автоматического включения следующего. Перезапуск не нужен.";

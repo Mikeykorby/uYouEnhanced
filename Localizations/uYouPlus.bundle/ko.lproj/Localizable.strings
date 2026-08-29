@@ -300,3 +300,14 @@
 "DEFAULT" = "기본";
 "CUSTOM_COLOR" = "사용자 색상";
 "RESTART_REQUIRED" = "앱을 다시 시작해야 합니다.";
+
+/* uYouEnhanced Extras */
+"UYOU_EXTRAS" = "uYouEnhanced 확장 기능";
+"AD_AUTO_SKIP" = "광고 자동 건너뛰기";
+"AD_AUTO_SKIP_DESC" = "건너뛸 수 있는 광고가 나타나면 자동으로 건너뛰기 버튼을 누릅니다. 재시작이 필요 없습니다.";
+"HIDE_SHORTS_SHELF" = "Shorts 선반 숨기기";
+"HIDE_SHORTS_SHELF_DESC" = "홈 피드에서 Shorts 캐러셀을 제거합니다. 앱 재시작이 필요합니다.";
+"REMEMBER_SPEED" = "재생 속도 기억";
+"REMEMBER_SPEED_DESC" = "선택한 재생 속도를 영상과 앱 재시작에 걸쳐 유지합니다. 재시작이 필요 없습니다.";
+"AUTO_LOOP" = "동영상 자동 반복 재생";
+"AUTO_LOOP_DESC" = "다음 동영상을 자동 재생하는 대신 현재 동영상을 반복 재생합니다. 재시작이 필요 없습니다.";

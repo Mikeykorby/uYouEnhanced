@@ -300,3 +300,14 @@
 "DEFAULT" = "Varsayılan";
 "CUSTOM_COLOR" = "Özel Renk";
 "RESTART_REQUIRED" = "Uygulama yeniden başlatılması gereklidir.";
+
+/* uYouEnhanced Extras */
+"UYOU_EXTRAS" = "uYouEnhanced Extras";
+"AD_AUTO_SKIP" = "Auto Skip Ads";
+"AD_AUTO_SKIP_DESC" = "Automatically presses the Skip button as soon as a skippable ad appears. No restart needed.";
+"HIDE_SHORTS_SHELF" = "Hide Shorts Shelf";
+"HIDE_SHORTS_SHELF_DESC" = "Removes the Shorts carousel from the Home feed. App restart is required.";
+"REMEMBER_SPEED" = "Remember Playback Speed";
+"REMEMBER_SPEED_DESC" = "Keeps your chosen playback speed across videos and app restarts. No restart needed.";
+"AUTO_LOOP" = "Auto Loop Video";
+"AUTO_LOOP_DESC" = "Replays the current video instead of autoplaying the next one. No restart needed.";

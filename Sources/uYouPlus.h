@@ -183,6 +183,11 @@ static NSString *const kHideSubscriptionsNotificationBadge = @"hideSubscriptions
 static NSString *const kFixCasting = @"fixCasting_enabled";
 static NSString *const kNewSettingsUI = @"newSettingsUI_enabled";
 static NSString *const kFlex = @"flex_enabled";
+// uYouEnhanced Extras (feature branch)
+static NSString *const kAdAutoSkip = @"adAutoSkip_enabled";
+static NSString *const kHideShortsShelf = @"hideShortsShelf_enabled";
+static NSString *const kRememberSpeed = @"rememberSpeed_enabled";
+static NSString *const kAutoLoop = @"autoLoop_enabled";
 // unused (uYouEnhanced)
 static NSString *const kGoogleSigninFix = @"googleSigninFix_enabled";
 

@@ -301,3 +301,14 @@
 "DEFAULT" = "Default";
 "CUSTOM_COLOR" = "Custom Color";
 "RESTART_REQUIRED" = "App restart is required.";
+
+/* uYouEnhanced Extras */
+"UYOU_EXTRAS" = "uYouEnhanced Extras";
+"AD_AUTO_SKIP" = "Werbung automatisch überspringen";
+"AD_AUTO_SKIP_DESC" = "Drückt die Überspringen-Schaltfläche automatisch, sobald eine überspringbare Werbung erscheint. Kein Neustart nötig.";
+"HIDE_SHORTS_SHELF" = "Shorts-Leiste ausblenden";
+"HIDE_SHORTS_SHELF_DESC" = "Entfernt die Shorts-Leiste aus dem Start-Feed. Neustart erforderlich.";
+"REMEMBER_SPEED" = "Wiedergabegeschwindigkeit merken";
+"REMEMBER_SPEED_DESC" = "Behält die gewählte Wiedergabegeschwindigkeit über Videos und Neustarts hinweg. Kein Neustart nötig.";
+"AUTO_LOOP" = "Video automatisch wiederholen";
+"AUTO_LOOP_DESC" = "Wiederholt das aktuelle Video, statt das nächste automatisch zu starten. Kein Neustart nötig.";

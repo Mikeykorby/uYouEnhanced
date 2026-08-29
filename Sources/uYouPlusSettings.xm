@@ -908,6 +908,13 @@ NSString *cacheDescription = [NSString stringWithFormat:@"%@", GetCacheSize()];
     // iSponsorBlock toggle hidden while the integration is disabled.
     // SWITCH2(LOC(@"HIDE_ISPONSORBLOCK"), nil, kHideiSponsorBlockButton);
     SWITCH(LOC(@"HIDE_CHIP_BAR"), LOC(@"HIDE_CHIP_BAR_DESC"), kHideChipBar);
+
+    # pragma mark - uYouEnhanced Extras
+    SECTION_HEADER(LOC(@"UYOU_EXTRAS"));
+    SWITCH2(LOC(@"AD_AUTO_SKIP"), LOC(@"AD_AUTO_SKIP_DESC"), kAdAutoSkip);
+    SWITCH2(LOC(@"HIDE_SHORTS_SHELF"), LOC(@"HIDE_SHORTS_SHELF_DESC"), kHideShortsShelf);
+    SWITCH2(LOC(@"REMEMBER_SPEED"), LOC(@"REMEMBER_SPEED_DESC"), kRememberSpeed);
+    SWITCH2(LOC(@"AUTO_LOOP"), LOC(@"AUTO_LOOP_DESC"), kAutoLoop);
     SWITCH2(LOC(@"Enable Notifications Tab"), LOC(@"Makes the Notifications Tab appear back onto the Pivot Bar, experimental: Testing customization options."), kShowNotificationsTab);
     YTSettingsSectionItem *notificationIconStyle = [%c(YTSettingsSectionItem)
         itemWithTitle:LOC(@"Notifications Tab nostalgic customization")

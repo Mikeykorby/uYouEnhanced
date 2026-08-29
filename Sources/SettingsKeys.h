@@ -39,6 +39,7 @@ NSArray *NSUserDefaultsCopyKeys = @[
     kHideChannelHeaderLinks, kiPhoneLayout, kBigYTMiniPlayer, 
     kReExplore, kAutoHideHomeBar, kHideSubscriptionsNotificationBadge, 
     kFixCasting, kNewSettingsUI, kFlex, kGoogleSigninFix,
+    kAdAutoSkip, kHideShortsShelf, kRememberSpeed, kAutoLoop,
 
     // uYou 3.0.4 keys
     @"showedWelcomeVC", @"hideShortsTab", @"hideCreateTab", 

@@ -306,3 +306,14 @@
 "DEFAULT" = "默认";
 "CUSTOM_COLOR" = "自定义颜色";
 "RESTART_REQUIRED" = "需要重启应用。";
+
+/* uYouEnhanced Extras */
+"UYOU_EXTRAS" = "uYouEnhanced 扩展功能";
+"AD_AUTO_SKIP" = "自动跳过广告";
+"AD_AUTO_SKIP_DESC" = "可跳过广告出现时自动按下跳过按钮。无需重启。";
+"HIDE_SHORTS_SHELF" = "隐藏 Shorts 短视频栏";
+"HIDE_SHORTS_SHELF_DESC" = "从首页信息流中移除 Shorts 短视频栏。需要重启应用。";
+"REMEMBER_SPEED" = "记住播放速度";
+"REMEMBER_SPEED_DESC" = "在切换视频和重启应用后保持你选择的播放速度。无需重启。";
+"AUTO_LOOP" = "自动循环播放";
+"AUTO_LOOP_DESC" = "循环播放当前视频，而不是自动播放下一个。无需重启。";
