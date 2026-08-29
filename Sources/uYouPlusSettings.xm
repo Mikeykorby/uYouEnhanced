@@ -916,6 +916,7 @@ NSString *cacheDescription = [NSString stringWithFormat:@"%@", GetCacheSize()];
     SWITCH2(LOC(@"REMEMBER_SPEED"), LOC(@"REMEMBER_SPEED_DESC"), kRememberSpeed);
     SWITCH2(LOC(@"AUTO_LOOP"), LOC(@"AUTO_LOOP_DESC"), kAutoLoop);
     SWITCH2(LOC(@"IOS26_LIQUID_UI"), LOC(@"IOS26_LIQUID_UI_DESC"), kIOS26LiquidUI);
+    SWITCH2(LOC(@"REDESIGN_MODE"), LOC(@"REDESIGN_MODE_DESC"), kRedesignMode);
     SWITCH2(LOC(@"Enable Notifications Tab"), LOC(@"Makes the Notifications Tab appear back onto the Pivot Bar, experimental: Testing customization options."), kShowNotificationsTab);
     YTSettingsSectionItem *notificationIconStyle = [%c(YTSettingsSectionItem)
         itemWithTitle:LOC(@"Notifications Tab nostalgic customization")

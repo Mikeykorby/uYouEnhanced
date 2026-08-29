@@ -189,6 +189,7 @@ static NSString *const kHideShortsShelf = @"hideShortsShelf_enabled";
 static NSString *const kRememberSpeed = @"rememberSpeed_enabled";
 static NSString *const kAutoLoop = @"autoLoop_enabled";
 static NSString *const kIOS26LiquidUI = @"ios26LiquidUI_enabled";
+static NSString *const kRedesignMode = @"redesignMode_enabled";
 // unused (uYouEnhanced)
 static NSString *const kGoogleSigninFix = @"googleSigninFix_enabled";
 

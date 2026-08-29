@@ -40,7 +40,7 @@ NSArray *NSUserDefaultsCopyKeys = @[
     kReExplore, kAutoHideHomeBar, kHideSubscriptionsNotificationBadge, 
     kFixCasting, kNewSettingsUI, kFlex, kGoogleSigninFix,
     kAdAutoSkip, kHideShortsShelf, kRememberSpeed, kAutoLoop,
-    kIOS26LiquidUI,
+    kIOS26LiquidUI, kRedesignMode,
 
     // uYou 3.0.4 keys
     @"showedWelcomeVC", @"hideShortsTab", @"hideCreateTab", 

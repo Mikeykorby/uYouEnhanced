@@ -332,6 +332,8 @@ And a huge thank you to **qnblackcat**, **PoomSmart**, and all the other develop
 
 24. **iOS 26 Liquid UI:** Applies iOS 26 Liquid Glass-style transparency to YouTube's buttons and bars, integrating them into the UI like native iOS 26 controls. Only affects iOS 26 and newer. No restart needed. **<-- uYouEnhanced Exclusive Feature (subject to change)**
 
+25. **Redesign Mode (uYouEnhanced):** A complete visual overhaul designed by uYouEnhanced — rounded translucent player buttons, pill-shaped subscribe buttons, tinted tab bar with accent color, rounded feed thumbnails, and an accent-tinted progress bar. App restart required. **<-- uYouEnhanced Exclusive Feature (subject to change)**
+
 </details>
 
 # Known issues
