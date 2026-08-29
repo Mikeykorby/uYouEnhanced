@@ -25,21 +25,40 @@ static BOOL mediaDownloadEnabled() {
 }
 
 // --- Player response access ------------------------------------------------
+// Uses YouTubeExtractor (repo's own innertube client, Extractor.h/xm) with
+// the video ID found via the responder chain — no guessed class methods.
 
-static NSDictionary *currentPlayerResponse(void) {
-    id playerViewController = [%c(YTPlayerViewController) activePlayerController];
-    if (!playerViewController) return nil;
-    id playerResponse = nil;
-    @try {
-        playerResponse = [playerViewController valueForKey:@"playerResponse"];
-    } @catch (NSException *e) {
-        return nil;
-    }
-    if ([playerResponse isKindOfClass:NSDictionary.class]) return playerResponse;
-    if ([playerResponse respondsToSelector:@selector(jsonDict)]) {
-        return [playerResponse performSelector:@selector(jsonDict)];
+#import "Extractor.h"
+
+static NSString *currentVideoID(void) {
+    // Walk the responder chain looking for anything exposing a videoId
+    // (works from any view inside the watch page); strictly guarded.
+    for (id scene in UIApplication.sharedApplication.connectedScenes) {
+        if ([scene isKindOfClass:[UIWindowScene class]]) {
+            for (UIWindow *window in ((UIWindowScene *)scene).windows) {
+                UIResponder *responder = window;
+                while (responder) {
+                    @try {
+                        if ([responder respondsToSelector:@selector(videoId)]) {
+                            id val = [responder performSelector:@selector(videoId)];
+                            if ([val isKindOfClass:NSString.class] && val.length > 0
+                                && ![(NSString *)val containsString:@" "]) {
+                                return val;
+                            }
+                        }
+                    } @catch (NSException *e) {}
+                    responder = responder.nextResponder;
+                }
+            }
+        }
     }
     return nil;
+}
+
+static NSDictionary *currentPlayerResponse(void) {
+    NSString *videoId = currentVideoID();
+    if (!videoId) return nil;
+    return [YouTubeExtractor youtubePlayerRequest:@"ios" :videoId];
 }
 
 static NSArray *adaptiveFormats(void) {

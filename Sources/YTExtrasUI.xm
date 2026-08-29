@@ -9,6 +9,18 @@
 
 #import "uYouPlus.h"
 
+// Forward-declaration fixes: declare the YouTube classes this file touches
+// so the compiler sees full interfaces (headers aren't imported globally).
+@interface YTPivotBarView : UIView
+@end
+
+@interface YTReelPlayerViewController : UIViewController
+- (NSString *)videoId;
+@end
+
+@interface YTShortsPlayerViewController : YTReelPlayerViewController
+@end
+
 static BOOL tabReorderEnabled() {
     return IS_ENABLED(kTabReorderMode);
 }
@@ -96,10 +108,23 @@ static BOOL customShortsActionsEnabled() {
 %new
 - (void)playerCopyLongPress:(UILongPressGestureRecognizer *)gesture {
     if (gesture.state != UIGestureRecognizerStateBegan) return;
+    // Get the video ID from the watch page view controller via the
+    // responder chain (walks up until a YTWatchViewController-style object
+    // exposes a videoId property); guarded + @try so a copy action can
+    // never crash the player.
     NSString *videoId = nil;
     @try {
-        id playerViewController = [%c(YTPlayerViewController) activePlayerController];
-        videoId = [playerViewController valueForKeyPath:@"currentVideoMetadata.videoId"];
+        UIResponder *responder = self.view;
+        while (responder && !videoId) {
+            if ([responder respondsToSelector:@selector(videoId)]) {
+                id val = [responder performSelector:@selector(videoId)];
+                if ([val isKindOfClass:NSString.class] && val.length > 0
+                    && ![(NSString *)val containsString:@" "]) {
+                    videoId = val;
+                }
+            }
+            responder = responder.nextResponder;
+        }
     } @catch (NSException *e) {}
     if (!videoId) return;
 
