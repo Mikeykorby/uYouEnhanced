@@ -195,8 +195,8 @@ static void showMediaDownloadMenu(UIView *anchor) {
         : @"Audio — unavailable";
 
     UIAlertController *menu = [UIAlertController alertControllerWithTitle:@"Media Download"
-        message:videoLabel message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    menu.message = [NSString stringWithFormat:@"%@\n%@", videoLabel, audioLabel];
+        message:[NSString stringWithFormat:@"%@\n%@", videoLabel, audioLabel]
+        preferredStyle:UIAlertControllerStyleActionSheet];
 
     if (video[@"url"]) {
         [menu addAction:[UIAlertAction actionWithTitle:videoLabel style:UIAlertActionStyleDefault handler:^(UIAlertAction *a) {

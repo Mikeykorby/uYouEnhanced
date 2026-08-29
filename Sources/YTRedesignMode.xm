@@ -15,6 +15,17 @@
 #import "uYouPlus.h"
 #import <UIKit/UIKit.h>
 
+// Forward-declaration fixes: declare the YouTube classes this file touches
+// so the compiler sees full interfaces (headers aren't imported globally).
+@interface YTPivotBarView : UIView
+@end
+
+@interface YTMainAppControlsOverlayView : UIView
+@end
+
+@interface YTAppViewController : UIViewController
+@end
+
 static BOOL redesignEnabled() {
     return IS_ENABLED(kRedesignMode);
 }
