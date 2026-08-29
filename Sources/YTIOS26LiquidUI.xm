@@ -11,6 +11,14 @@
 #import "uYouPlus.h"
 #import <UIKit/UIKit.h>
 
+// Forward-declaration fixes: declare the YouTube classes this file touches
+// so the compiler sees full interfaces (headers aren't imported globally).
+@interface YTPivotBarView : UIView
+@end
+
+@interface YTIChipsBarContainerViewController : UIViewController
+@end
+
 static BOOL liquidUIEnabled() {
     return IS_ENABLED(kIOS26LiquidUI);
 }
