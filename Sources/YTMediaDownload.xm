@@ -41,7 +41,7 @@ static NSString *currentVideoID(void) {
                     @try {
                         if ([responder respondsToSelector:@selector(videoId)]) {
                             id val = [responder performSelector:@selector(videoId)];
-                            if ([val isKindOfClass:NSString.class] && val.length > 0
+                            if ([val isKindOfClass:[NSString class]] && [(NSString *)val length] > 0
                                 && ![(NSString *)val containsString:@" "]) {
                                 return val;
                             }
