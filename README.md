@@ -334,6 +334,14 @@ And a huge thank you to **qnblackcat**, **PoomSmart**, and all the other develop
 
 25. **Redesign Mode (uYouEnhanced):** A complete visual overhaul designed by uYouEnhanced — rounded translucent player buttons, pill-shaped subscribe buttons, tinted tab bar with accent color, rounded feed thumbnails, and an accent-tinted progress bar. App restart required. **<-- uYouEnhanced Exclusive Feature (subject to change)**
 
+26. **Media Download Menu:** Built-in downloader with a long-press menu on the share button — video (up to 1080p60), audio-only, captions (.xml), thumbnail (.jpg), and video details (.json). Works standalone; uYou's own download flow (repaired by the built-in download pipeline) remains available. **<-- uYouEnhanced Exclusive Feature (subject to change)**
+
+27. **Reorder Navigation Tabs:** Long-press a bottom navigation tab to move it left or right. Restart required. **<-- uYouEnhanced Exclusive Feature (subject to change)**
+
+28. **Custom Player Actions:** Long-press the video title area for quick copy actions — video ID, video URL, embed URL. No restart needed. **<-- uYouEnhanced Exclusive Feature (subject to change)**
+
+29. **Custom Shorts Actions:** Long-press in Shorts for quick actions — copy Shorts ID, copy Shorts URL, open the Short in the main app. No restart needed. **<-- uYouEnhanced Exclusive Feature (subject to change)**
+
 </details>
 
 # Known issues

@@ -190,6 +190,10 @@ static NSString *const kRememberSpeed = @"rememberSpeed_enabled";
 static NSString *const kAutoLoop = @"autoLoop_enabled";
 static NSString *const kIOS26LiquidUI = @"ios26LiquidUI_enabled";
 static NSString *const kRedesignMode = @"redesignMode_enabled";
+static NSString *const kMediaDownloadButton = @"mediaDownloadButton_enabled";
+static NSString *const kTabReorderMode = @"tabReorderMode_enabled";
+static NSString *const kCustomPlayerActions = @"customPlayerActions_enabled";
+static NSString *const kCustomShortsActions = @"customShortsActions_enabled";
 // unused (uYouEnhanced)
 static NSString *const kGoogleSigninFix = @"googleSigninFix_enabled";
 

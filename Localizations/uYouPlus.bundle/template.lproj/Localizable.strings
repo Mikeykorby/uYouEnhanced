@@ -340,3 +340,12 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 
 "REDESIGN_MODE" = "Redesign Mode (uYouEnhanced)";
 "REDESIGN_MODE_DESC" = "A complete visual overhaul designed by uYouEnhanced: rounded translucent player buttons, pill-shaped subscribe buttons, tinted tab bar with accent color, rounded feed thumbnails, and an accent-tinted progress bar. App restart is required.";
+
+"MEDIA_DOWNLOAD_BUTTON" = "Media Download Menu";
+"MEDIA_DOWNLOAD_BUTTON_DESC" = "Adds a download menu (long-press the share button) for video (up to 1080p60), audio, captions, thumbnail, and video details. Works standalone; uYou downloads stay available.";
+"TAB_REORDER_MODE" = "Reorder Navigation Tabs";
+"TAB_REORDER_MODE_DESC" = "Long-press a bottom navigation tab to move it left or right. Restart required.";
+"CUSTOM_PLAYER_ACTIONS" = "Custom Player Actions";
+"CUSTOM_PLAYER_ACTIONS_DESC" = "Long-press the video title area for quick copy actions (video ID, URL, embed URL). No restart needed.";
+"CUSTOM_SHORTS_ACTIONS" = "Custom Shorts Actions";
+"CUSTOM_SHORTS_ACTIONS_DESC" = "Long-press in Shorts for quick actions (copy ID, copy URL, open in main app). No restart needed.";
