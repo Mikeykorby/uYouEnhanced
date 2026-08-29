@@ -146,7 +146,6 @@ static void liquidizeOverlayButtons(UIView *root) {
     }
     if (chips) {
         chips.backgroundColor = [UIColor clearColor];
-        chips.backgroundView = nil;
     }
 }
 %end

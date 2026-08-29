@@ -17,10 +17,9 @@
 
 // Forward-declaration fixes: declare the YouTube classes this file touches
 // so the compiler sees full interfaces (headers aren't imported globally).
+// NOTE: YTMainAppControlsOverlayView is already fully declared via
+// uYouPlus.h -> YTMainAppVideoPlayerOverlayView.h -> YTMainAppControlsOverlayView.h
 @interface YTPivotBarView : UIView
-@end
-
-@interface YTMainAppControlsOverlayView : UIView
 @end
 
 @interface YTAppViewController : UIViewController
